@@ -5,6 +5,7 @@ import posts from './routes/posts.ts'
 import comments from './routes/comments.ts'
 
 const server = express()
+// server.use(express.static(path.join(__dirname, 'public')))
 server.use(express.json())
 
 server.use('/api/v1/posts', posts)
