@@ -15,11 +15,13 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  const post = req.body
-  console.log(post, 'post')
-  const addedPostResult = await addPost(post)
-  console.log(addedPostResult)
-  res.json(addedPostResult[0])
+  try {
+    const post = req.body
+    const addedPostResult = await addPost(post)
+    res.json(addedPostResult[0])
+  } catch (err) {
+    console.log(err)
+  }
 })
 
 
